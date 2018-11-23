@@ -1,7 +1,11 @@
 html {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 body {
     font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.main-container {
+    margin-top: 1rem;
 }
