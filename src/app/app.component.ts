@@ -7,5 +7,4 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "youtubeapp";
-  //AIzaSyBvfarg4e24YV7Y3V3ese9S9HzbbjNHtOI
 }
