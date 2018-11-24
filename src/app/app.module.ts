@@ -11,12 +11,16 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 // Servicios
 import { YoutubeService } from './providers/youtube.service';
 
+// pipes
+import { YoutubePipe } from './pipes/youtube.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    YoutubePipe
   ],
   imports: [
     BrowserModule,

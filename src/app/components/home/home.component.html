@@ -6,27 +6,31 @@
     <div class="card animated fadeIn fast" *ngFor="let video of videos">
       <img class="card-img-top" [src]="video.thumbnails.high.url" [alt]="video.title" />
       <div class="card-body">
-          <p class="card-text"><small class="text-muted">Fecha publicación: {{video.publishedAt | date: 'dd/MM/yyyy'}}</small></p>
+        <p class="card-text"><small class="text-muted">Fecha publicación: {{video.publishedAt | date: 'dd/MM/yyyy'}}</small></p>
         <h5 class="card-title">{{video.title}}</h5>
         <button type="button" class="btn btn-outline-info btn-block"
         (click)="verVideo(video)"> Ver video</button>
       </div>
     </div>
   </div>
+
+  <button (click)="cargarMasVideos()" type="button" class="btn btn-outline-info btn-block"> Mostrars mas videos</button>
+  <br>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" 
+aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyborad="false">
     <div class="modal-dialog" role="document">
       <div class="modal-content" *ngIf="videoSeleccionado" style="width: 600px;">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">{{videoSeleccionado.title}}</h5>
         </div>
         <div class="modal-body">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ttwwOecPS10?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" [src]="videoSeleccionado.resourceId.videoId|youtube" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary">Cerrar</button>
+          <button type="button" class="btn btn-secondary" (click)="cerrarModal()">Cerrar</button>
         </div>
       </div>
     </div>
